@@ -1,0 +1,10 @@
+aventura_no_labirinto/
+├── aventura_pkg/
+│   ├── __init__.py
+│   ├── labirinto.py
+│   ├── jogador.py
+│   └── utils.py
+├── main.py
+├── requirements.txt
+├── aventura_pkg.html (Gerado no passo 4)
+└── README.md
