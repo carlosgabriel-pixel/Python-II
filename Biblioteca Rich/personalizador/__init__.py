@@ -1,0 +1,1 @@
+"""Pacote personalizador para formatação de texto utilizando a biblioteca Rich."""
