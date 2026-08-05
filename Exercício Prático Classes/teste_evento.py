@@ -1,0 +1,10 @@
+# Script de execução principal (.py)
+data1 = datetime(2026, 5, 10, 14, 30)
+data2 = datetime(2026, 12, 1, 9, 0)
+ev1 = Evento("Reunião", data1, "Alinhamento")
+ev2 = Evento("Workshop", data2, "Treinamento")
+
+print(ev1)
+print(f"Total de eventos registrados: {Evento.num_eventos()}")
+print(f"Validação dos parâmetros: {Evento.valida_evento('Teste', datetime.now(), 'Desc')}")
+print(f"O evento 1 ocorre antes do evento 2? {ev1 < ev2}")
