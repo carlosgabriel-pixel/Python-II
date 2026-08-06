@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="profile-card">
+    {% if user and user.foto %}
+        <img src="{{ user.foto }}" alt="Foto de perfil de {{ user.username }}" class="profile-img">
+    {% else %}
+        <div class="profile-placeholder">Sem Foto</div>
+    {% endif %}
+    <h2>Olá, {{ user.username }}!</h2>
+    {% if user.bio %}
+        <p class="bio">{{ user.bio }}</p>
+    {% endif %}
+    <a href="{{ url_for('post') }}" class="btn">Escrever novo post</a>
+</section>
+
+<section class="timeline">
+    <h3>Últimas publicações</h3>
+    {% if posts %}
+        {% for post in posts %}
+            <article class="post-card">
+                <header class="post-header">
+                    <strong>@{{ post.author.username }}</strong>
+                    <time>{{ post.timestamp.strftime('%d/%m/%Y às %H:%M') }}</time>
+                </header>
+                <p>{{ post.body }}</p>
+            </article>
+        {% endfor %}
+    {% else %}
+        <p>Nenhum post encontrado na timeline.</p>
+    {% endif %}
+</section>
+{% endblock %}
